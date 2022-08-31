@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 function App() {
   return (
@@ -17,9 +18,40 @@ function App() {
         >
           Learn React
         </a>
+        <Timer />
       </header>
     </div>
   );
+}
+
+class Timer extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {seconds: 0};
+  }
+
+  tick(){
+    this.setState(state => ({
+      seconds: state.seconds + 1
+    }));
+  }
+
+  componentDidMount(){
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval);
+  }
+
+  render(){
+    return(
+      <div>
+        Seconds: {this.state.seconds}
+      </div>
+    );
+  }
+  
 }
 
 export default App;
