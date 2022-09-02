@@ -1,5 +1,19 @@
 import React from "react";
+// import react-logo from "../../../img/react-logo.svg";
 import './Game.css';
+
+const TicTacToe = () =>
+{
+    return(
+        <div className="App">
+        <header className="App-header">
+        {/*<img src={react-logo} className="App-logo" alt="logo" />*/}
+        <Game />
+        {/*<Timer />*/}
+        </header>
+        </div>
+    );
+};
 
 class Game extends React.Component {
     constructor(props){
@@ -153,4 +167,4 @@ function calculateWinner(squares){
       return null;
 }
 
-export default Game
+export default TicTacToe
