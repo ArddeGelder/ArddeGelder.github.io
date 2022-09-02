@@ -5,6 +5,7 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import NoPage from './pages/NoPage';
 import Blogs from './pages/Blogs';
+import Form from './pages/Form';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import TicTacToe from './pages/TicTacToe/Game';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="tictactoe" element={<TicTacToe />} />
+          <Route path="form" element={<Form />} />
           <Route path="*" element={<NoPage />} />          
         </Route>
       </Routes>
